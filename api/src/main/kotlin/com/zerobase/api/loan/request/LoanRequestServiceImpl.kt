@@ -15,6 +15,7 @@ class LoanRequestServiceImpl(
         saveUserInfo(loanRequestInputDto.toUserInfoDto(userKey))
 
         loanRequestReview("")
+        return null;
     }
 
     override fun saveUserInfo(userInfoDto: UserInfoDto) =
