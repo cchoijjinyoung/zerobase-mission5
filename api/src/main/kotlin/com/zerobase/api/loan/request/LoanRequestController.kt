@@ -8,10 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 @RestController
 @RequestMapping("/fintech/api/v1")
-class LoanRequestController {
+class LoanRequestController (
+    private val loanRequestService: LoanRequestService
+) {
     @PostMapping("/request")
-    fun loanRequest(@RequestBody loanRequestDto: LoanRequestDto.LoanRequestInputDto
+    fun loanRequest(@RequestBody loanRequestInputDto: LoanRequestDto.LoanRequestInputDto
     ): ResponseEntity<LoanRequestDto.LoanRequestResponseDto> {
 
+        return ResponseEntity.ok(loanRequestService.loanRequestMain(loanRequestInputDto))
     }
 }

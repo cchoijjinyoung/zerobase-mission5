@@ -10,7 +10,7 @@ class UserInfo(
     val userKey: String,
 
     @Column(name = "usr_reg_num")
-    val userRegisterationNumber: String,
+    val userRegistrationNumber: String,
 
     @Column(name = "usr_nm")
     val userName: String,

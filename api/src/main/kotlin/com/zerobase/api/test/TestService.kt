@@ -2,7 +2,6 @@ package com.zerobase.api.test
 
 import com.zerobase.domain.domain.UserInfo
 import com.zerobase.domain.repository.UserInfoRepository
-import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 
 @Service
@@ -11,5 +10,5 @@ class TestService(
 ) {
     fun testGetService(userKey: String) = userInfoRepository.findByUserKey(userKey).toDto()
 
-    fun UserInfo.toDto() = TestDto.UserInfoDto(userKey, userRegisterationNumber, userName, userIncomeAmount)
+    fun UserInfo.toDto() = TestDto.UserInfoDto(userKey, userRegistrationNumber, userName, userIncomeAmount)
 }
